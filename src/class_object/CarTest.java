@@ -3,6 +3,7 @@ package class_object;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.Iterator;
 
 public class CarTest {
     public static void main(String[] args) {
@@ -57,6 +58,13 @@ public class CarTest {
         Count all the cars that are Blue or Beige or 2023 -> 3
          */
 
+        int countBB2023 = 0;
+
+        for (Car car : cars) {
+            if(car.color.equals("Blue") || car.color.equals("Beige") || car.year == 2023) countBB2023++;
+        }
+
+        System.out.println(countBB2023);
 
         /*
         Remove all the cars that are Tesla and print the size of the cars
@@ -64,5 +72,18 @@ public class CarTest {
         Expected:
         3
          */
+
+        /*
+        Iterator<Car> iterator = cars.iterator();
+
+        while(iterator.hasNext()){
+            if(iterator.next().make.equals("Tesla")) iterator.remove();
+        }
+
+         */
+
+        cars.removeIf(car -> car.make.equals("Tesla"));
+
+        System.out.println(cars.size()); // 3
     }
 }
