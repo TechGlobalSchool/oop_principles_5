@@ -23,12 +23,13 @@ public class Animal {
         this.isOmnivore = isOmnivore;
     }
 
+    public static final boolean isExtinct = true;
     public String name;
     public int age;
     public boolean isCarnivore;
     public boolean isHerbivore;
     public boolean isOmnivore;
-    public boolean isTrainable;
+
 
     @Override
     public String toString() {
@@ -63,6 +64,14 @@ public class Animal {
         System.out.println(a5);
         System.out.println(a6);
         System.out.println(a7);
+
+
+        System.out.println("\n--------static instance variables-------\n");
+        System.out.println(Animal.isExtinct); // true
+
+
+        System.out.println(Integer.MAX_VALUE); // 2147483647
+        System.out.println(Integer.MIN_VALUE); // -2147483648
 
     }
 }
