@@ -1,6 +1,8 @@
 package class_object;
 
 public class StudentTeacherPractice2 {
+
+
     public static void main(String[] args) {
         /*
         Create a Teacher object -> Alex Smith
