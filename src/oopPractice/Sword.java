@@ -24,10 +24,10 @@ public class Sword {
 
     // Modified constructor
     public Sword(double weight, double length, String name, String material){
+        this.material = material;
         this.weight = weight; // assign the value of local variable in the instance variable
         this.length = length;
         this.name = name;
-        this.material = material;
     }
 
     // 2. Instance variables
@@ -47,6 +47,11 @@ public class Sword {
     // static ones -> belongs to the class, What does every sword do?
     public static void slash(){
         System.out.println("Sword is slashing");
+    }
+
+    public static void damage(){
+        if (isSharp) System.out.println("Sword damages more");
+        else System.out.println("Sword damages less");
     }
 
     //non-static ones -> belongs to the object, What does every sword do differently?
