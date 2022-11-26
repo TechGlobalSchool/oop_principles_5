@@ -2,10 +2,26 @@ package oop_principles.encapsulation;
 
 public class AccountHolder {
 
-    String firstName;
+    private String firstName;
     String lastName;
     String address;
     String phoneNumber;
+
+    public String getFirstName(String passcode){
+        if(passcode.equals("1234")) return firstName;
+        else {
+            System.out.println("The passcode you provided is wrong");
+            return "";
+        }
+    }
+
+    public void setFirstName(String firstName, String passcode){
+        if(passcode.equals("1234")) this.firstName = firstName;
+        else this.firstName = null;
+    }
+
+
+
     private String SSN;
     private double balance;
 

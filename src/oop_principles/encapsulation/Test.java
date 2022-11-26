@@ -4,18 +4,13 @@ public class Test {
     public static void main(String[] args) {
         AccountHolder accountHolder = new AccountHolder();
 
-        accountHolder.firstName = "John";
-        accountHolder.lastName = "Doe";
-        accountHolder.address = "Chicago";
-        accountHolder.phoneNumber = "(312) 000-0000";
+        //accountHolder.firstName = "John";
+        //System.out.println(accountHolder.firstName);
 
-        //accountHolder.SSN = "000-00-0000";
-        accountHolder.setSSN("000-00-0000");
-        accountHolder.setSSN("111-11-1111");
+        accountHolder.setFirstName("John", "1234");
+        System.out.println(accountHolder.getFirstName("5555"));
 
-        System.out.println(accountHolder.firstName);
-        System.out.println(accountHolder.getSSN()); // 000-00-0000
-        System.out.println(accountHolder);
+
 
 
     }
