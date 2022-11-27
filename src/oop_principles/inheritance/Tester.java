@@ -37,4 +37,26 @@ public class Tester extends Person{
         System.out.println("Tester codes in " + language + " language");
     }
 
+   @Override
+    public void eat(){
+        System.out.println("Tester eats");
+    }
+
+    //Override sleep() method that has no-args
+
+    @Override
+    public void sleep() {
+        System.out.println("Tester sleeps");
+    }
+
+    @Override
+    public String toString() {
+        return "Tester{" +
+                "fName='" + fName + '\'' +
+                ", age=" + age +
+                ", DOB='" + DOB + '\'' +
+                ", SSN='" + getSSN() + '\'' +
+                ", isAutomationTester=" + isAutomationTester +
+                '}';
+    }
 }
