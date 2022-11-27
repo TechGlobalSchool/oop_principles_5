@@ -74,22 +74,80 @@ public class Employee_Exercise {
          */
 
         int teslaEmployees = 0, usbankEmployees = 0, verizonEmployees = 0;
+        int totalTesters = 0, totalDevs = 0, totalSM = 0, totalManagers = 0, totalDesigners = 0, totalSA = 0;
 
-        Employee managerEmployee = new Employee();
-        Employee systemArchitectEmployee = new Employee();
-        Employee scrumMasterEmployee = new Employee();
+        Employee managerEmployee = null;
+        Employee systemArchitectEmployee = null;
+        Employee scrumMasterEmployee = null;
+
+        Employee youngestDev = new Employee(); // age = 0
+        Employee youngestTester = new Employee(); // age = 0
+        Employee youngestDesigner = new Employee(); // age = 0
+
+        youngestTester.setAge(Integer.MAX_VALUE);
+        youngestDesigner.setAge(Integer.MAX_VALUE);
+        youngestDev.setAge(Integer.MAX_VALUE);
 
         for (Employee employee : employees) {
             if(employee.getCompany().getName().equals("Tesla")) teslaEmployees++;
             else if(employee.getCompany().getName().equals("USBank")) usbankEmployees++;
             else verizonEmployees++;
 
-
+            switch (employee.getJobPosition()) {
+                case "Tester":
+                    totalTesters++;
+                    if(employee.getAge() < youngestTester.getAge()) youngestTester = employee;
+                    break;
+                case "Developer":
+                    totalDevs++;
+                    if(employee.getAge() < youngestDev.getAge()) youngestDev = employee;
+                    break;
+                case "Scrum Master":
+                    totalSM++;
+                    scrumMasterEmployee = employee;
+                    break;
+                case "System Architect":
+                    totalSA++;
+                    systemArchitectEmployee = employee;
+                    break;
+                case "Designer":
+                    totalDesigners++;
+                    if(employee.getAge() < youngestDesigner.getAge()) youngestDesigner = employee;
+                    break;
+                case "Manager":
+                    totalManagers++;
+                    managerEmployee = employee;
+                    break;
+                default:
+                    System.out.println("The job is not matching with any case {" + employee.getJobPosition() + "}");
+            }
         }
 
         System.out.println("Employee numbers for each company");
         System.out.println("Tesla = " + teslaEmployees);
         System.out.println("USBank = " + usbankEmployees);
         System.out.println("Verizon = " + verizonEmployees);
+
+        System.out.println("Employee numbers for each position");
+        System.out.println("Tester = " + totalTesters);
+        System.out.println("Developer = " + totalDevs);
+        System.out.println("Scrum Master = " + totalSM);
+        System.out.println("Designer = " + totalDesigners);
+        System.out.println("System Architect = " + totalSA);
+        System.out.println("Manager = " + totalManagers);
+
+
+        System.out.println("Find the company");
+        System.out.println(scrumMasterEmployee.getJobPosition() + " = " + scrumMasterEmployee.getFullName() + " works at " + scrumMasterEmployee.getCompany().getName());
+        System.out.println(systemArchitectEmployee.getJobPosition() + " = " + systemArchitectEmployee.getFullName() + " works at " + systemArchitectEmployee.getCompany().getName());
+        System.out.println(managerEmployee.getJobPosition() + " = " + managerEmployee.getFullName() + " works at " + managerEmployee.getCompany().getName());
+
+
+        System.out.println("\n---------Youngest-------\n");
+        System.out.println("Youngest tester = " + youngestTester.getFullName() + " with the age of " + youngestTester.getAge());
+        System.out.println("Youngest developer = " + youngestDev.getFullName() + " with the age of " + youngestDev.getAge());
+        System.out.println("Youngest designer = " + youngestDesigner.getFullName() + " with the age of " + youngestDesigner.getAge());
+
+
     }
 }

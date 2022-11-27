@@ -55,7 +55,6 @@ public class Employee {
     }
 
     //toString() method
-
     @Override
     public String toString() {
         return "Employee{" +
