@@ -24,6 +24,23 @@ public class Animal {
     public boolean isAlive;
     public boolean isExtinct;
 
+    public void eat(String food){
+        System.out.println(name + " is eating " + food);
+    }
+
+    public void breath(String type){
+        switch (type){
+            case "Gills":
+                System.out.println(name + " is water breathing");
+                break;
+            case "Lungs":
+                System.out.println(name + " is air breathing");
+                break;
+            default:
+                System.out.println(name + " is breathing with a unique way");
+        }
+    }
+
     @Override
     public String toString() {
         return  this.getClass().getSimpleName() +"{" +
@@ -45,5 +62,8 @@ public class Animal {
 
         Animal animal = new Animal("Trex", 5, 7.4, 400.2, "carnivore", false, true);
         System.out.println(animal);
+
+        animal.eat("another animal");
+        animal.breath("Lungs");
     }
 }
