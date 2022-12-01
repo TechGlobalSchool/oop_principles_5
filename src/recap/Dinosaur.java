@@ -48,6 +48,34 @@ public class Dinosaur extends Animal {
         return damage;
     }
 
+    public double attack(String mood){
+        double damage = weight * height;
+        switch (size.toLowerCase()){
+            case "big":
+                damage *= 3;
+                break;
+            case "giant":
+                damage *= 10;
+                break;
+        }
+
+        switch (mood.toLowerCase()){
+            case "chill":
+            case "calm":
+            case "happy":
+                damage /= 2;
+            case "angry":
+            case "hungry":
+                damage *= 2;
+        }
+
+        System.out.println(name + " is attacking. It damaged \"" + damage + "\"." +
+                "\n" + (hasSpike ? "Animal had spikes the attack was critical!" : "Animal didn't have spikes attack was not critical!"));
+        return damage;
+    }
+
+
+
     @Override
     public String toString() {
         return "Dinosaur{" +
