@@ -1,5 +1,7 @@
 package oop_principles.inheritance;
 
+import java.util.Arrays;
+
 public class TesterClub {
     public static void main(String[] args) {
         FrontendTester ft1 = new FrontendTester("Othman", 23, "1993", "000", true);
@@ -15,7 +17,21 @@ public class TesterClub {
         Average age = 33
          */
 
+        int countManual = 0, countAutomation = 0, sumAge = 0;
 
+        for (Tester tester : testers) {
+            if(tester.isAutomationTester) countAutomation++;
+            else countManual++;
 
+            sumAge += tester.age;
+        }
+
+        System.out.println("Manual testers = " + countManual);
+        System.out.println("Automation testers = " + countAutomation);
+        System.out.println("Average age = " + sumAge / testers.length); // 133
+
+        //Counting with streaming
+        System.out.println(Arrays.stream(testers).filter(x -> x.isAutomationTester).count());
+        System.out.println(Arrays.stream(testers).filter(x -> !x.isAutomationTester).count());
     }
 }

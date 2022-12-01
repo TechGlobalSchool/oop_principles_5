@@ -22,7 +22,7 @@ public class Person {
         this(fName, age, DOB);
         this.SSN = SSN;
     }
-
+    
     //instance variables
     public String fName;
     protected int age;
