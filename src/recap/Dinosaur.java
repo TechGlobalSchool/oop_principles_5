@@ -19,6 +19,18 @@ public class Dinosaur extends Animal {
     public String size; // big, normal, giant
     public boolean hasSpike;
 
+    /*
+    Override the attack method coming from Animal parent class.
+    1. if the size:
+        * normal -> multiply the damage by 1 times
+        * big -> multiply the damage by 3 times
+        * giant -> multiply the damage by 10 times
+    2. if animal has spike ->
+            print "Animal had spikes the attack was critical!"
+       else ->
+            print "Animal didn't have spikes attack was not critical!"
+     */
+
     @Override
     public String toString() {
         return "Dinosaur{" +
