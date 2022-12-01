@@ -64,9 +64,11 @@ public class Dinosaur extends Animal {
             case "calm":
             case "happy":
                 damage /= 2;
+                break;
             case "angry":
             case "hungry":
                 damage *= 2;
+                break;
         }
 
         System.out.println(name + " is attacking. It damaged \"" + damage + "\"." +
