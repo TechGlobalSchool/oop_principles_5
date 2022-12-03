@@ -1,6 +1,6 @@
 package oop_principles.abstraction;
 
-public class iPhone extends Phone{
+public class iPhone extends Phone implements Camera, WiFi{
 
     public iPhone(){}
 
@@ -16,5 +16,20 @@ public class iPhone extends Phone{
     @Override
     public void text() {
         System.out.println("iPhone way of text");
+    }
+
+    @Override
+    public void takesPhoto() {
+        System.out.println("iPhone way of taking photos ");
+    }
+
+    @Override
+    public void recordVideo() {
+        System.out.println("iPhone way of taking videos");
+    }
+
+    @Override
+    public void connect() {
+        System.out.println("iPhone way of WiFi connecting to WiFi");
     }
 }

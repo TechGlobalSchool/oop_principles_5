@@ -23,8 +23,12 @@ public abstract class Phone {
     public String color;
     public double price;
 
-    public abstract void call(); // created to be implemented by sub-classes
-    public abstract void text(); // created to be implemented by sub-classes
+    abstract void call(); // created to be implemented by sub-classes
+    abstract void text(); // created to be implemented by sub-classes
+
+    void rings(){
+        System.out.println("Phone rings");
+    }
 
     @Override
     public String toString() {

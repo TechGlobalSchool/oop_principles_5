@@ -24,5 +24,14 @@ public class TestAbstraction {
 
         System.out.println(s2);
         System.out.println(i2);
+
+        s2.takesPhoto();
+        s2.recordVideo();
+        i2.takesPhoto();
+        i2.recordVideo();
+
+        Nokia n1 = new Nokia();
+
+
     }
 }

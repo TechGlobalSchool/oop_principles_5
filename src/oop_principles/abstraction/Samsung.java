@@ -1,6 +1,6 @@
 package oop_principles.abstraction;
 
-public class Samsung extends Phone{
+public class Samsung extends Phone implements Camera, WiFi{
 
     public Samsung(){}
 
@@ -16,5 +16,20 @@ public class Samsung extends Phone{
     @Override
     public void text() {
         System.out.println("Samsung way of text");
+    }
+
+    @Override
+    public void takesPhoto() {
+        System.out.println("Samsung way of taking photos");
+    }
+
+    @Override
+    public void recordVideo() {
+        System.out.println("Samsung way of recording videos");
+    }
+
+    @Override
+    public void connect() {
+        System.out.println("Samsung way of connecting to WiFi");
     }
 }
