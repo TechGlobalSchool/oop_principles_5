@@ -23,6 +23,19 @@ public class Animal {
     public String diet; // carnivore, omnivore, herbivore
     public boolean isAlive;
     public boolean isExtinct;
+    private String gender;
+
+    public String getGender(String password) {
+        switch (password){
+            case "12345":
+                return gender;
+        }
+        return "Your password is wrong";
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
     public void eat(String food) {
         switch (food) {
@@ -96,6 +109,10 @@ public class Animal {
 //        animal.isExtinct = false;
 //        animal.breath("Lungs");
 
-        animal.attack();
+//        animal.attack();
+
+        animal.setGender("Male");
+        System.out.println(animal.getGender("123asdasd"));
+
     }
 }
