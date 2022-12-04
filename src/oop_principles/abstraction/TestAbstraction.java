@@ -19,6 +19,8 @@ public class TestAbstraction {
         i1.call();
         i1.text();
 
+
+
         Samsung s2 = new Samsung(64, "Galaxy S20", "Black", 700);
         iPhone i2 = new iPhone(128, "iPhone 14 Max Pro", "Silver", 750);
 
