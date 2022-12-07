@@ -2,6 +2,9 @@ package oop_principles.abstraction;
 
 
 public interface Camera {
+
+    String cameraQuality = "48MP";
+
     void takesPhoto();
     void recordVideo();
 

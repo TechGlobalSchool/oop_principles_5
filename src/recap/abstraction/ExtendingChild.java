@@ -11,10 +11,18 @@ public class ExtendingChild extends AbstractParent{
         return var1 + var4;
     }
 
+    @Override
+    public String getFirstThreeCharsOfVar2(){
+        return var2.substring(0, 3);
+    }
+
     public static void main(String[] args) {
         AbstractParent abstractParent = new ExtendingChild(2, "String", true, 3);
-        System.out.println(abstractParent.var1);
-        System.out.println(abstractParent.var4);
-        System.out.println("Sum of var1 and var4 = " + abstractParent.getSumOfVar1And4());
+//        System.out.println(abstractParent.var1);
+//        System.out.println(abstractParent.var4);
+//        System.out.println("Sum of var1 and var4 = " + abstractParent.getSumOfVar1And4());
+
+        System.out.println("Var2 = " + abstractParent.var2);
+        System.out.println("Var2's first three characters = " + abstractParent.getFirstThreeCharsOfVar2());
     }
 }
